@@ -1,0 +1,5 @@
+img_src: "https://picsum.photos/270/270/?random"
+  img_alt: "random image"
+name: Firstname Lastname
+url: "http://www.example.com"
+teaser: "Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor"

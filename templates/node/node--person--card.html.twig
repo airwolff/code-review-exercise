@@ -1,0 +1,11 @@
+{% set image = node.field_image.entity.field_image_file %}
+{% set formatted_image = image.entity.uri.value|image_style('1_1_768x768') %}
+
+{# Render our Drupal data through Pattern Lab #}
+{% include "@molecules/cards/person-card/person-card.twig" with {
+  img_src: formatted_image,
+  img_alt: image.alt,
+  name: label,
+  url: url,
+  teaser: content.field_educational_role,
+} %}

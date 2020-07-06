@@ -1,0 +1,113 @@
+.person-card {
+  .pl & {
+    @include susy-breakpoint($bp--medium-up, $medium) {
+      max-width: span(4 of 8);
+    }
+  }
+}
+
+.views-view-people-search .views-row {
+  margin-bottom: $space-double;
+
+  @include susy-breakpoint($bp--large-up, $large) {
+    @include span(4 of 8);
+  }
+
+  &:nth-child(even) {
+    @include susy-breakpoint($bp--large-up, $large) {
+      margin-right: 0;
+    }
+  }
+
+
+.person-card__link {
+  background-color: $gray-light;
+  display: block;
+  text-decoration: none;
+  color: $gray-dark;
+  width: 100%;
+
+  @include clearfix;
+
+  &:hover,
+  &:focus {
+    background-color: $blue-dark;
+    color: $white;
+
+    h2,
+		p {
+			color: $white;
+		}
+
+    .person-card__image img {
+      border-bottom-color: $magenta;
+    }
+
+    .person-card__content:after {
+      background-color: $magenta;
+    }
+  }
+}
+
+.person-card__content {
+  float: left;
+  margin: $space-double 0;
+  padding: 0 $space-double;
+  width: 100%;
+  @extend %card-content;
+
+  @include breakpoint($bp--medium) {
+    margin: $space 0;
+    padding: 0 $space;
+  }
+
+  &::after {
+    width: calc(100% - 4rem);
+
+    @include breakpoint($bp--medium) {
+      width: calc(100% - 2rem);
+    }
+  }
+}
+
+.person-card__image img {
+  border-bottom: 2px solid $turquoise;
+  margin-bottom: $space;
+  position: relative;
+
+  @include breakpoint($bp--small-up) {
+    float: left;
+    margin-right: gutter();
+    margin-bottom: 0;
+    width: rem(140px);
+  }
+}
+
+.person-card__text--with-image {
+  @include breakpoint($bp--small-up) {
+    padding-left: rem(160px);
+  }
+}
+
+.person-card--name {
+  @include heading-xs;
+
+  color: $magenta;
+  margin: 0;
+
+  @include breakpoint($bp--large) {
+    font-size: rem(14px);
+    line-height: normal;
+  }
+}
+
+.person-card__teaser {
+  color: $gray-dark;
+  line-height: normal;
+  margin: 0;
+
+  @include breakpoint($bp--large) {
+    font-size: rem(12px);
+    line-height: normal;
+  }
+}

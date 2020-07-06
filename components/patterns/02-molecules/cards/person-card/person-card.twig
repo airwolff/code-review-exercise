@@ -1,0 +1,32 @@
+<div class="card person-card">
+{# missing {% if url %} #}
+  <a class="person-card__link" href="{{ url }}">
+    {# missing endif #}
+    <div class="person-card__content">
+      {% block image_content %}
+        {% if img_src %}
+          <div class="person-card__image" {# missing {% if img_alt %} {{img_alt}} {% endif %} #}>
+            {% include "@atoms/04-images/00-image/_image.twig" %}
+            {# replace with {{ image_src }} #}
+          </div>
+          {# should use img tag instead of a div #}
+        {% endif %}
+      {% endblock %}
+
+      <div class="person-card__text{% if image %} person-card__text--with-image{% endif %}">
+      {# reformat the above if endif also missing block for text content#}
+        {% if name %}
+          <h1 class="person-card__name">{{ name }}</h1>
+        {% endif %}
+
+          <p class="person-card__teaser">
+            {% if teaser %}
+              {{ teaser }}
+              {# put if around p tag #}
+            {% endif %}
+          </p>
+      </div>
+
+    </div>
+  </a>
+</div>
